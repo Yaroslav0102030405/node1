@@ -1,9 +1,9 @@
-const admin = ["Alex", "Andrey", "Tamara"]
-const clients = ["Anna", "Alina", "Yura"]
+// const admin = ["Alex", "Andrey", "Tamara"]
+// const clients = ["Anna", "Alina", "Yura"]
 
-const user = {
-    admin,
-    clients
-}
+// const user = {
+//     admin,
+//     clients
+// }
 
-export default user
+// export default user
