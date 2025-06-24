@@ -26,5 +26,20 @@
   })
   .catch(error => console.log("Помилка:", error));
     </script>
+
+    <!-- <script>
+      fetch('/products', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({"id": "1",
+    "title": "qui est esse",
+    "body": "est rerum"})
+})
+.then(response => response.json()) // Очікуємо JSON відповідь від сервера
+.then(data => console.log(data))
+.catch(error => console.error('Помилка:', error));
+    </script> -->
 </body>
 </html>

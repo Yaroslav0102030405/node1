@@ -85,9 +85,13 @@ const productsOperations = {
 import express from "express";
 import products from "./products/products.json" with { type: "json" };
 import cors from "cors";
+const PORT = process.env.PORT || 4000
 
 const app = express()
 app.use(cors())
+
+// Це middleware дозволяє Express парсити JSON-тіло запитів
+// app.use(express.json());
 
 app.get("/", (req, res, next) => {
   console.log("first middleware")
@@ -109,4 +113,13 @@ app.use((_, res) => {
   res.send("Not found")
 })
 
-app.listen(4000)
+// app.post("/products", (req, res) => {
+//   const newProduct = req.body;
+//   products.push(newProduct);
+//   console.log("Новий продукт додано:", newProduct);
+//   res.json({ message: "Продукт успішно додано", product: newProduct, allProducts: products });
+// });
+
+app.listen(PORT, () => {
+  console.log(`listen ${PORT}`)
+})
