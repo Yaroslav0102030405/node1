@@ -81,3 +81,32 @@ const productsOperations = {
     console.error("[app.js][Головний блок] *** ПОМИЛКА! *** Не вдалося отримати продукт:", error.message);
   }
 })();
+
+import express from "express";
+import products from "./products/products.json" with { type: "json" };
+import cors from "cors";
+
+const app = express()
+app.use(cors())
+
+app.get("/", (req, res, next) => {
+  console.log("first middleware")
+  res.send("<h>Головна сторінка</h>")
+  // next()
+})
+
+app.get("/about", (req, res, next) => {
+  console.log("second middleware")
+  res.send("<h1>Про нас сторінка</h1>")
+  // next()
+})
+
+app.get("/products", (req, res) => {
+  res.json(products)
+})
+
+app.use((_, res) => {
+  res.send("Not found")
+})
+
+app.listen(4000)
